@@ -1,0 +1,8 @@
++++++++++++++++++++++++++
+Download and Install Ollama
+Install  Model Qwen2 
++++++++++++++++++++++++++
+Moduls:
+
+click
+requests
