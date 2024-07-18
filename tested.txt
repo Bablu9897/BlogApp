@@ -1,0 +1,23 @@
+Using Text:
+	
+Input:
+
+PS E:\Working> py summarize.py -t "what is the colour of sun?"
+
+Output:
+
+Summary:
+The color of the Sun appears white, as it emits all colors of light across the visible spectrum at equal intensities. However, when we see sunlight on Earth, it often looks yellow due to a phenomenon called Rayleigh scattering. In this process, our atmosphere scatters shorter wavelength (blue and violet) and longer wavelength (red) light more than middle wavelengths (green and yellow). Since blue and violet light scatter more, they are scattered away from us, whereas the scattered green and yellow light reaches our eyes, making the Sun appear yellow to us.
+
+Using File:
+
+Input:
+
+py summarize.py -f sum.txt
+
+Output:
+
+Summary:
+The Sun appears to be yellow to our eyes, but it actually emits light across the entire spectrum of colors. So, from its perspective, you could say that it's every color at once. However, when we look at the Sun during the day, it often seems white because the atmosphere scatters blue and violet light more than red light, giving a yellowish hue to our perception.
+
+The temperature of sunlight is about 5,500 degrees Celsius (9,932 degrees Fahrenheit) near its surface. The wavelength distribution of this heat shows that it includes all colors but appears white or yellowish due to our visual interpretation and atmospheric effects on Earth.
