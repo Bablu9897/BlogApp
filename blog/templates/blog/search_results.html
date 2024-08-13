@@ -1,0 +1,49 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<div class="blog-post">
+    <h2>{{ blog.title }}</h2>
+    <p class="blog-post-meta">Published {{ blog.created_at|date:"M. d, Y, H:i a" }} by {{ blog.author }}</p>
+    <p>{{ blog.content }}</p>
+    <p><a href="#">Share this post</a></p>
+</div>
+
+<hr>
+
+<div class="comments-section">
+    <h3>Comments</h3>
+
+    {% if blog.comments.exists %}
+        <ul>
+            {% for comment in blog.comments.all %}
+            <li>
+                <p>{{ comment.content }}</p>
+                <p class="comment-meta">
+                    <small>{{ comment.user.username }} - {{ comment.created_at|date:"M. d, Y, H:i a" }}</small>
+                    <span class="likes">
+                        <a href="{% url 'blog:like_comment' comment.id %}">Like</a> ({{ comment.likes.count }})
+                    </span>
+                </p>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No comments yet.</p>
+    {% endif %}
+</div>
+
+<hr>
+
+<div class="comment-form">
+    <h3>Leave a comment</h3>
+    {% if user.is_authenticated %}
+        <form method="post">
+            {% csrf_token %}
+            <textarea name="content" rows="4" class="form-control" placeholder="Enter your comment here"></textarea>
+            <button type="submit" class="btn btn-primary mt-2">Submit</button>
+        </form>
+    {% else %}
+        <p>You must be <a href="{% url 'blog:login' %}">logged in</a> to comment.</p>
+    {% endif %}
+</div>
+{% endblock %}
